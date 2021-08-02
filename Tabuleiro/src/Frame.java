@@ -53,7 +53,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		titulo.setFont(new Font("Ink free", Font.BOLD, 50));
 		titulo.setBounds(290, 20, 215, 53);
 		
-		qtdPlayer = new JLabel("N° jogadores: ");
+		qtdPlayer = new JLabel("NÂ° jogadores: ");
 		qtdPlayer.setBounds(100, 100, 195, 30);
 		qtdPlayer.setForeground(Color.black);
 		qtdPlayer.setFont(new Font("Arial", Font.PLAIN, 30));
