@@ -96,7 +96,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		titulo.setFont(new Font("Ink free", Font.BOLD, 50));
 		titulo.setBounds(290, 20, 215, 53);
 		
-		qtdPlayer = new JLabel("N° jogadores: ");
+		qtdPlayer = new JLabel("Nï¿½ jogadores: ");
 		qtdPlayer.setBounds(100, 100, 195, 30);
 		qtdPlayer.setForeground(Color.black);
 		qtdPlayer.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -262,7 +262,6 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getButton() == 1) {
 			if (p1Selected) {
 				j1.setBounds(e.getX()-15, e.getY()-17, 34, 29);
@@ -284,31 +283,26 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == mapas) {
 			if (mapas.getSelectedIndex() == 1) {
 				fundo.setFundo("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\maps\\city-r.jpg");
