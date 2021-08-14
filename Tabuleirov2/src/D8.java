@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class D8 extends JPanel implements ActionListener {
+public class D8 extends JPanel implements ActionListener, Dados {
 
 	/**
 	 * 
@@ -21,19 +21,19 @@ public class D8 extends JPanel implements ActionListener {
 	protected Random aleatorio;
 	D8() {
 		
-		this.setBounds(340, 250, 90, 117);
+		this.setBounds(380, 250, 120, 160);
 		this.setLayout(null);
 		this.setBackground(Color.black);
 		
 		d8 = new JLabel();
-		d8.setBounds(0, 90, 90, 30);
+		d8.setBounds(0, 90, 120, 70);
 		d8.setOpaque(true);
 		d8.setFont(new Font("Arial", Font.PLAIN, 30));
 		d8.setHorizontalAlignment(JLabel.CENTER);
 		d8.setBackground(Color.white);
 		
 		dado = new JButton();
-		dado.setBounds(0, 0, 90, 90);
+		dado.setBounds(0, 0, 120, 90);
 		dado.setHorizontalTextPosition(JButton.RIGHT);
 		dado.setIcon(new ImageIcon(getClass().getResource("/files/dice/d8-70.png")));
 		dado.addActionListener(this);
@@ -46,9 +46,76 @@ public class D8 extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		exibeDado(d8, 8);
+	}
+
+	@Override
+	public int jogarDado(int numeroLados) {
 		aleatorio = new Random();
-		resultado = aleatorio.nextInt((7) + 1) + 1;
-		d8.setText(Integer.toString(resultado*Frame.resultado));
+		resultado = aleatorio.nextInt((numeroLados-1) + 1) + 1;
+		return resultado;
+	}
+
+	@Override
+	public void exibeDado(JLabel dado, int numeroLados) {
+		switch (Frame.resultado) {
+			case 1:
+				dado.setFont(new Font("Arial", Font.PLAIN, 30));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 2:
+				dado.setFont(new Font("Arial", Font.PLAIN, 30));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 3:
+				dado.setFont(new Font("Arial", Font.PLAIN, 30));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 4:
+				dado.setFont(new Font("Arial", Font.PLAIN, 20));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 5:
+				dado.setFont(new Font("Arial", Font.PLAIN, 20));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 6:
+				dado.setFont(new Font("Arial", Font.PLAIN, 20));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + 
+				" + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 7:
+				dado.setFont(new Font("Arial", Font.PLAIN, 20));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + 
+				" + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 8:
+				dado.setFont(new Font("Arial", Font.PLAIN, 20));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + 
+				" + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) 
+				+ "</html>");
+				break;
+			case 9:
+				dado.setFont(new Font("Arial", Font.PLAIN, 15));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + 
+				" + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) 
+				+ " + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+			case 10:
+				dado.setFont(new Font("Arial", Font.PLAIN, 15));
+				dado.setText("<html>" + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + 
+				Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + 
+				" + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) 
+				+ " + " + Integer.toString(jogarDado(numeroLados)) + " + " + Integer.toString(jogarDado(numeroLados)) + "</html>");
+				break;
+		}
 	}
 
 }

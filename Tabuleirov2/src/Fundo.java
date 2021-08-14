@@ -45,5 +45,9 @@ public class Fundo extends JPanel {
 			e.printStackTrace();
 		}
 	}
+	
+	public void setFundo(Image imagem) {
+		background = imagem;
+	}
 
 }
