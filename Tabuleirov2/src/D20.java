@@ -35,7 +35,7 @@ public class D20 extends JPanel implements ActionListener {
 		dado = new JButton();
 		dado.setBounds(0, 0, 90, 90);
 		dado.setHorizontalTextPosition(JButton.RIGHT);
-		dado.setIcon(new ImageIcon("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\dice\\d20-70.png"));
+		dado.setIcon(new ImageIcon(getClass().getResource("/files/dice/d20-70.png")));
 		dado.addActionListener(this);
 		dado.setFocusable(false);
 		

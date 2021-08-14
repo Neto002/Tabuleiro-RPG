@@ -12,7 +12,7 @@ public class Player extends JLabel {
 	
 	Player(String path) {
 		this.setPath(path);
-		icon = new ImageIcon(path);
+		icon = new ImageIcon(getClass().getResource(path));
 		this.setIcon(icon);
 		this.setBounds(200, 113, 34, 48);
 	}

@@ -56,32 +56,32 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 	
 	Frame() {
 		
-		fundo = new Fundo("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\maps\\hills-r.jpg");
+		fundo = new Fundo();
 		fundo.setBackground(Color.blue);
 		fundo.setBounds(0, 0, 736, 841);
 		fundo.addMouseListener(this);
 		
-		j1 = new Player("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player1\\player1.png");
+		j1 = new Player("/files/player/player1/player1.png");
 		j1.setBounds(268, 780, 34, 29);
 		j1.setVisible(false);
 		j1.setEnabled(false);
 		
-		j2 = new Player("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player2\\player2.png");
+		j2 = new Player("/files/player/player2/player2.png");
 		j2.setBounds(302, 780, 34, 29);
 		j2.setVisible(false);
 		j2.setEnabled(false);
 		
-		j3 = new Player("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player3\\player3.png");
+		j3 = new Player("/files/player/player3/player3.png");
 		j3.setBounds(336, 780, 34, 29);
 		j3.setVisible(false);
 		j3.setEnabled(false);
 		
-		j4 = new Player("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player4\\player4.png");
+		j4 = new Player("/files/player/player4/player4.png");
 		j4.setBounds(370, 780, 34, 29);
 		j4.setVisible(false);
 		j4.setEnabled(false);
 		
-		j5 = new Player("D:\\Eclipse Workspace\\Tabuleiro\\src\\files\\player\\player5\\player5.png");
+		j5 = new Player("/files/player/player5/player5.png");
 		j5.setBounds(404, 780, 34, 29);
 		j5.setVisible(false);
 		j5.setEnabled(false);
@@ -96,7 +96,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		titulo.setFont(new Font("Ink free", Font.BOLD, 50));
 		titulo.setBounds(290, 20, 215, 53);
 		
-		qtdPlayer = new JLabel("Nï¿½ jogadores: ");
+		qtdPlayer = new JLabel("N° jogadores: ");
 		qtdPlayer.setBounds(100, 100, 195, 30);
 		qtdPlayer.setForeground(Color.black);
 		qtdPlayer.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -143,7 +143,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p1.setVisible(false);
 		p1.setEnabled(false);
 		p1.setFocusable(false);
-		p1.setIcon(new ImageIcon("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player1\\player1-70.png"));
+		p1.setIcon(new ImageIcon(getClass().getResource("/files/player/player1/player1-70.png")));
 		p1.addActionListener(this);
 		
 		p2 = new JButton();
@@ -151,7 +151,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p2.setVisible(false);
 		p2.setEnabled(false);
 		p2.setFocusable(false);
-		p2.setIcon(new ImageIcon("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player2\\player2-70.png"));
+		p2.setIcon(new ImageIcon(getClass().getResource("/files/player/player2/player2-70.png")));
 		p2.addActionListener(this);
 		
 		p3 = new JButton();
@@ -159,7 +159,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p3.setVisible(false);
 		p3.setEnabled(false);
 		p3.setFocusable(false);
-		p3.setIcon(new ImageIcon("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player3\\player3-70.png"));
+		p3.setIcon(new ImageIcon(getClass().getResource("/files/player/player3/player3-70.png")));
 		p3.addActionListener(this);
 		
 		p4 = new JButton();
@@ -167,7 +167,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p4.setVisible(false);
 		p4.setEnabled(false);
 		p4.setFocusable(false);
-		p4.setIcon(new ImageIcon("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player4\\player4-70.png"));
+		p4.setIcon(new ImageIcon(getClass().getResource("/files/player/player4/player4-70.png")));
 		p4.addActionListener(this);
 		
 		p5 = new JButton();
@@ -175,7 +175,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p5.setVisible(false);
 		p5.setEnabled(false);
 		p5.setFocusable(false);
-		p5.setIcon(new ImageIcon("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\player\\player5\\player5-70.png"));
+		p5.setIcon(new ImageIcon(getClass().getResource("/files/player/player5/player5-70.png")));
 		p5.addActionListener(this);
 		
 		nome1 = new JTextField("Player1");
@@ -259,6 +259,10 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		this.setExtendedState(6);
 		this.setVisible(true);
 	}
+	
+	public static void main(String[] args) {
+		new Frame();
+	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -304,14 +308,16 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == mapas) {
-			if (mapas.getSelectedIndex() == 1) {
-				fundo.setFundo("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\maps\\city-r.jpg");
+			if (mapas.getSelectedIndex() == 0) {
+				fundo.setFundo("/files/maps/hills-r.jpg");
+			} else if (mapas.getSelectedIndex() == 1) {
+				fundo.setFundo("/files/maps/city-r.jpg");
 			} else if (mapas.getSelectedIndex() == 2) {
-				fundo.setFundo("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\maps\\cavern_entrance-r.jpg");
+				fundo.setFundo("/files/maps/cavern_entrance-r.jpg");
 			} else if (mapas.getSelectedIndex() == 3) {
-				fundo.setFundo("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\maps\\cavern_inside-r.jpg");
+				fundo.setFundo("/files/maps/cavern_inside-r.jpg");
 			} else if (mapas.getSelectedIndex() == 4) {
-				fundo.setFundo("D:\\Eclipse Workspace\\Tabuleirov2\\src\\files\\maps\\spider_tomb-r.jpg");
+				fundo.setFundo("/files/maps/spider_tomb-r.jpg");
 			}
 		}
 		if (e.getSource() == comboDice) {
