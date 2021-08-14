@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -53,12 +55,15 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 	protected JTextField nome3;
 	protected JTextField nome4;
 	protected JTextField nome5;
+	protected static GraphicsDevice Gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	protected int largura = Gd.getDisplayMode().getWidth();
+	protected static int altura = Gd.getDisplayMode().getHeight();
 	
 	Frame() {
 		
 		fundo = new Fundo();
 		fundo.setBackground(Color.blue);
-		fundo.setBounds(0, 0, 736, 841);
+		fundo.setBounds(0, 0, 736, altura); //736x841
 		fundo.addMouseListener(this);
 		
 		j1 = new Player("/files/player/player1/player1.png");
@@ -87,7 +92,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		j5.setEnabled(false);
 		
 		menu = new JPanel();
-		menu.setBounds(737, 0, 800, 841);
+		menu.setBounds(737, 0, largura, altura); //800x841
 		menu.setLayout(null);
 		menu.setBackground(Color.green);
 		
@@ -147,7 +152,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p1.addActionListener(this);
 		
 		p2 = new JButton();
-		p2.setBounds(220, 450, 90, 90);
+		p2.setBounds(240, 450, 90, 90);
 		p2.setVisible(false);
 		p2.setEnabled(false);
 		p2.setFocusable(false);
@@ -155,7 +160,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p2.addActionListener(this);
 		
 		p3 = new JButton();
-		p3.setBounds(340, 450, 90, 90);
+		p3.setBounds(380, 450, 90, 90);
 		p3.setVisible(false);
 		p3.setEnabled(false);
 		p3.setFocusable(false);
@@ -163,7 +168,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p3.addActionListener(this);
 		
 		p4 = new JButton();
-		p4.setBounds(460, 450, 90, 90);
+		p4.setBounds(520, 450, 90, 90);
 		p4.setVisible(false);
 		p4.setEnabled(false);
 		p4.setFocusable(false);
@@ -171,7 +176,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		p4.addActionListener(this);
 		
 		p5 = new JButton();
-		p5.setBounds(580, 450, 90, 90);
+		p5.setBounds(660, 450, 90, 90);
 		p5.setVisible(false);
 		p5.setEnabled(false);
 		p5.setFocusable(false);
@@ -186,28 +191,28 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		nome1.setVisible(false);
 		
 		nome2 = new JTextField("Player2");
-		nome2.setBounds(220, 540, 90, 30);
+		nome2.setBounds(240, 540, 90, 30);
 		nome2.setFont(new Font("Arial", Font.PLAIN, 15));
 		nome2.setForeground(Color.black);
 		nome2.setEnabled(false);
 		nome2.setVisible(false);
 		
 		nome3 = new JTextField("Player3");
-		nome3.setBounds(340, 540, 90, 30);
+		nome3.setBounds(380, 540, 90, 30);
 		nome3.setFont(new Font("Arial", Font.PLAIN, 15));
 		nome3.setForeground(Color.black);
 		nome3.setEnabled(false);
 		nome3.setVisible(false);
 		
 		nome4 = new JTextField("Player4");
-		nome4.setBounds(460, 540, 90, 30);
+		nome4.setBounds(520, 540, 90, 30);
 		nome4.setFont(new Font("Arial", Font.PLAIN, 15));
 		nome4.setForeground(Color.black);
 		nome4.setEnabled(false);
 		nome4.setVisible(false);
 		
 		nome5 = new JTextField("Player5");
-		nome5.setBounds(580, 540, 90, 30);
+		nome5.setBounds(660, 540, 90, 30);
 		nome5.setFont(new Font("Arial", Font.PLAIN, 15));
 		nome5.setForeground(Color.black);
 		nome5.setEnabled(false);
@@ -237,7 +242,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		menu.add(mapas);
 		
 		background = new JLayeredPane();
-		background.setBounds(0, 0, 1550, 878);
+		background.setBounds(0, 0, largura, altura); //1550x878
 		
 		background.add(fundo, JLayeredPane.DEFAULT_LAYER);
 		background.add(menu, JLayeredPane.DEFAULT_LAYER);
@@ -250,7 +255,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
 		this.setLocationRelativeTo(null);
-		this.setSize(500, 500);
+		this.setSize(largura, altura);
 		this.setTitle("RPG Map - Neto");
 		this.setResizable(true);
 		
