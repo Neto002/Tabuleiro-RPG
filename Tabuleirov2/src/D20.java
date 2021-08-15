@@ -45,7 +45,6 @@ public class D20 extends JPanel implements ActionListener, Dados {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		exibeDado(d20, 20);
 	}
 	
