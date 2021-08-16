@@ -27,7 +27,7 @@ public class Fundo extends JPanel {
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(background, 0, 1, 736, Frame.altura, null);
+		g2d.drawImage(background, 0, 1, 736, Frame.altura - 24, null); //736
 		repaint();
 		
 	}

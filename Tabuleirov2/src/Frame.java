@@ -56,7 +56,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 	protected JTextField nome4;
 	protected JTextField nome5;
 	protected static GraphicsDevice Gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-	protected int largura = Gd.getDisplayMode().getWidth();
+	protected static int largura = Gd.getDisplayMode().getWidth();
 	protected static int altura = Gd.getDisplayMode().getHeight();
 	
 	Frame() {
