@@ -461,6 +461,12 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 			p3Selected = false;
 			p4Selected = false;
 			p5Selected = false;
+			
+			p1.setEnabled(false);
+			p2.setEnabled(true);
+			p3.setEnabled(true);
+			p4.setEnabled(true);
+			p5.setEnabled(true);
 		}
 		if (e.getSource() == p2) {
 			p1Selected = false;
@@ -468,6 +474,12 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 			p3Selected = false;
 			p4Selected = false;
 			p5Selected = false;
+			
+			p1.setEnabled(true);
+			p2.setEnabled(false);
+			p3.setEnabled(true);
+			p4.setEnabled(true);
+			p5.setEnabled(true);
 		}
 		if (e.getSource() == p3) {
 			p1Selected = false;
@@ -475,6 +487,12 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 			p3Selected = true;
 			p4Selected = false;
 			p5Selected = false;
+			
+			p1.setEnabled(true);
+			p2.setEnabled(true);
+			p3.setEnabled(false);
+			p4.setEnabled(true);
+			p5.setEnabled(true);
 		}
 		if (e.getSource() == p4) {
 			p1Selected = false;
@@ -482,6 +500,12 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 			p3Selected = false;
 			p4Selected = true;
 			p5Selected = false;
+			
+			p1.setEnabled(true);
+			p2.setEnabled(true);
+			p3.setEnabled(true);
+			p4.setEnabled(false);
+			p5.setEnabled(true);
 		}
 		if (e.getSource() == p5) {
 			p1Selected = false;
@@ -489,6 +513,12 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 			p3Selected = false;
 			p4Selected = false;
 			p5Selected = true;
+			
+			p1.setEnabled(true);
+			p2.setEnabled(true);
+			p3.setEnabled(true);
+			p4.setEnabled(true);
+			p5.setEnabled(false);
 		}
 	}
 	
