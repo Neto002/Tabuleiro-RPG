@@ -63,7 +63,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		
 		fundo = new Fundo();
 		fundo.setBackground(Color.blue);
-		fundo.setBounds(0, 0, 736, altura); //736x841
+		fundo.setBounds(0, 0, 736, altura);
 		fundo.addMouseListener(this);
 		
 		j1 = new Player("/files/player/player1/player1.png");
@@ -92,7 +92,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		j5.setEnabled(false);
 		
 		menu = new JPanel();
-		menu.setBounds(737, 0, largura, altura); //800x841
+		menu.setBounds(737, 0, largura, altura);
 		menu.setLayout(null);
 		menu.setBackground(Color.green);
 		
@@ -242,7 +242,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 		menu.add(mapas);
 		
 		background = new JLayeredPane();
-		background.setBounds(0, 0, largura, altura); //1550x878
+		background.setBounds(0, 0, largura, altura);
 		
 		background.add(fundo, JLayeredPane.DEFAULT_LAYER);
 		background.add(menu, JLayeredPane.DEFAULT_LAYER);
