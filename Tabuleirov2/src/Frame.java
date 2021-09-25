@@ -454,7 +454,7 @@ public class Frame extends JFrame implements ActionListener, MouseListener {
 				nome5.setVisible(true);
 			}
 		}
-		
+		//Seleção de pinos
 		if (e.getSource() == p1) {
 			p1Selected = true;
 			p2Selected = false;

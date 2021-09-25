@@ -17,6 +17,7 @@ public class D4 extends JPanel implements ActionListener, Dados {
 	private static final long serialVersionUID = 1L;
 	protected JLabel d4;
 	protected JButton dado;
+	
 	D4() {
 		
 		this.setBounds(100, 250, 120, 160);
